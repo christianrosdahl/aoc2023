@@ -2,7 +2,7 @@
 
 # %% Auxiliary functions
 def get_input():
-    file = open('input.txt','r')
+    file = open('input02.txt','r')
     lines = file.readlines()
     for i in range(len(lines)):
         lines[i] = lines[i].replace('\n', '')
