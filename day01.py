@@ -24,7 +24,7 @@ def main():
 main()
 
 # %% Part 2
-def main():
+def main2():
     lines = get_input('input01.txt')
     sum = 0
     numbers = [str(i) for i in range(0,10)]
@@ -49,4 +49,4 @@ def main():
         sum += int(first_number + last_number)
     print("Result: " + str(sum))
 
-main()
+main2()

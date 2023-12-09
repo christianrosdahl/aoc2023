@@ -72,7 +72,7 @@ def get_adjacent_values(grid, row, col):
 main()
 
 # %% Part 2
-def main():
+def main2():
     grid = get_input('input03.txt')
     grid_numbers = get_grid_numbers(grid)
     stars = {}
@@ -111,4 +111,4 @@ def get_adjacent_stars(grid, grid_number):
                             stars.append((adj_row, adj_col))
     return stars
 
-main()
+main2()

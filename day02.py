@@ -38,7 +38,7 @@ def possible_set(set, actual_numbers):
 main()
 
 # %% Part 2
-def main():
+def main2():
     games = get_input('input02.txt')
     sum_of_powers = 0
     for game in games:
@@ -57,4 +57,4 @@ def main():
         sum_of_powers += power
     print(f'Result: {sum_of_powers}')
 
-main()
+main2()

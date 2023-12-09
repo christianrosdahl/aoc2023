@@ -31,7 +31,7 @@ def main():
 main()
 
 # %% Part 2
-def main():
+def main2():
     cards = get_input('input04.txt')
     num_cards = [1 for _ in range(len(cards))]
     for i, card in enumerate(cards):
@@ -42,4 +42,4 @@ def main():
     total_num_cards = sum(num_cards)
     print(f'Answer: {total_num_cards}')
 
-main()
+main2()
