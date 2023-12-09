@@ -1,13 +1,9 @@
 # Advent of Code 2023 - day 2
 
-# %% Auxiliary functions
-def get_input():
-    file = open('input02.txt','r')
-    lines = file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace('\n', '')
-    return lines
+# %% Imports
+from common import get_input
 
+# %% Common functions and classes (used in both parts)
 def set_to_dict(set):
     dict = {}
     for item in set.split(', '):
@@ -16,7 +12,8 @@ def set_to_dict(set):
     return dict
 
 # %% Part 1
-def main(games):
+def main():
+    games = get_input('input02.txt')
     feasible_game_id_sum = 0
     actual_numbers = {'red': 12, 'green': 13, 'blue': 14}
     for game in games:
@@ -38,11 +35,11 @@ def possible_set(set, actual_numbers):
             return False
     return True
 
-games = get_input()
-main(games)
+main()
 
 # %% Part 2
-def main(games):
+def main():
+    games = get_input('input02.txt')
     sum_of_powers = 0
     for game in games:
         min_num_cubes = {'red': 0, 'green': 0, 'blue': 0}
@@ -60,5 +57,4 @@ def main(games):
         sum_of_powers += power
     print(f'Result: {sum_of_powers}')
 
-games = get_input()
-main(games)
+main()

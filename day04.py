@@ -1,14 +1,9 @@
 # Advent of Code 2023 - day 4
 
-# %% Common functions and classes (used in both parts)
-def get_input():
-    file = open('input04.txt','r')
-    lines = file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace('\n', '')
-    file.close()
-    return lines
+# %% Imports
+from common import get_input
 
+# %% Common functions and classes (used in both parts)
 def get_num_matches(card):
     card = card.replace('  ', ' ') # Remove double spaces
     card = card.split(': ')[1] # Remove "Card N: " from line
@@ -24,7 +19,7 @@ def get_num_matches(card):
 
 # %% Part 1
 def main():
-    cards = get_input()
+    cards = get_input('input04.txt')
     answer = 0
     for card in cards:
         card_points = 0
@@ -37,7 +32,7 @@ main()
 
 # %% Part 2
 def main():
-    cards = get_input()
+    cards = get_input('input04.txt')
     num_cards = [1 for _ in range(len(cards))]
     for i, card in enumerate(cards):
         num_matches = get_num_matches(card)

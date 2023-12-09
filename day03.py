@@ -1,14 +1,9 @@
 # Advent of Code 2023 - day 3
 
-# %% Common functions and classes (used in both parts)
-def get_input():
-    file = open('input03.txt','r')
-    lines = file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace('\n', '')
-    file.close()
-    return lines
+# %% Imports
+from common import get_input
 
+# %% Common functions and classes (used in both parts)
 class GridNumber:
     def __init__(self, number, line, start_index, end_index):
         self.number = number
@@ -43,7 +38,7 @@ def get_grid_numbers(grid):
 
 # %% Part 1
 def main():
-    grid = get_input()
+    grid = get_input('input03.txt')
     grid_numbers = get_grid_numbers(grid)
     result = 0
     for grid_number in grid_numbers:
@@ -78,7 +73,7 @@ main()
 
 # %% Part 2
 def main():
-    grid = get_input()
+    grid = get_input('input03.txt')
     grid_numbers = get_grid_numbers(grid)
     stars = {}
     for grid_number in grid_numbers:
