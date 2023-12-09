@@ -46,7 +46,7 @@ def get_num_ways_to_win_race(race_time, record):
 main()
 
 # %% Part 2
-def main():
+def main2():
     input_data = get_input('input06.txt')
 
     # Remove all spaces in input data
@@ -58,4 +58,4 @@ def main():
     num_ways_to_win = get_num_ways_to_win_race(race_time, record)
     print(f'Number of ways to win the race: {num_ways_to_win}')
 
-main()
+main2()
