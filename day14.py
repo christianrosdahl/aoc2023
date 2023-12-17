@@ -56,25 +56,24 @@ main()
 # %% Part 2
 def main2():
     # By setting 'plot' below to True, the transient and periodicity at equilibrium
-    # for the load can be inspected, so that adequate values can be selected for
-    # 'equilbrium_limit' (a number of cycles larger than the number for which 
-    # the transient is over and the limit cycle has been reached) and 
-    # 'max_period' (a number larger than the period of the limit cycle)
+    # for the load can be inspected, to make sure that 'num_cycles_simulated' is
+    # large enough to have passed the transient and entered the limit cycle, and to
+    # select 'max_period' (a number larger than the period of the limit cycle) adequately.
     plot = True
     input_data = get_input('input14.txt')
     grid = Grid2(input_data)
     
     loads = []
     num_cycles_simulated = 500
-    equilibrium_limit = 400
     max_period = 100
     for i in range(num_cycles_simulated):
         grid.spin_cycle()
         loads.append(evaluate(grid))
-        if i > equilibrium_limit:
+        if i > max_period:
             period = find_period(loads, max_period)
-            steps_to_index = (int(1e9) - (i + 1)) % period
-            load_after_a_billion_cycles = loads[-1 + steps_to_index - period]
+            if period:
+                steps_to_index = (int(1e9) - (i + 1)) % period
+                load_after_a_billion_cycles = loads[-1 + steps_to_index - period]
     
     if plot:
         plt.plot(range(1, len(loads) + 1), loads)
