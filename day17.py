@@ -6,6 +6,9 @@ from typing import NamedTuple
 import time
 
 # %% Part 1
+# NOTE: The computation time for the given input is about 2.5 minutes for this part and 
+# about 28 minutes for part 2. A more efficient implementation of the priority queue could
+# probably speed this up significantly.
 def main():
     start_time = time.time()
     input_data = get_input('input17.txt')
@@ -284,3 +287,4 @@ def get_neighbors_function2(grid_dimensions, min_steps_in_same_dir, max_step_in_
     return get_neighbors
 
 main2()
+# %%
